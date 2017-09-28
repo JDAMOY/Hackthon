@@ -2,7 +2,6 @@
 import RPi.GPIO as GPIO
 import time
 import os
-import num2chinese
 
 CHANNEL = 11
 GAP	= 5
@@ -19,7 +18,19 @@ class Player:
         GPIO.cleanup()
     
     def playTimeAlert(self, hour):
-        htext = num2chinese.num2chinese(hour)
+        if hour > 24:
+            return
+        charList = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九']
+        htext = charList[hour % 10]
+
+        if hour / 10 == 1:
+            htext = "十" + htext
+        elif hour / 10 == 2:
+            htext = '二十' + htext
+        else:
+            pass
+            
+        
         htext = "十八"
         message = "现在是北京时间%s点整" % htext
         print message
