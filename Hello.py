@@ -1,6 +1,8 @@
 from flask import Flask
 app = Flask(__name__)
+import commands
 
-@app.route('/')
+@app.route('/music')
 def hello_world():
-        return 'Hello, World!'
+        (status, output) = commands.getstatusoutput('mplayer rolling\ in\ the\ deep.mp3')
+        return output;
