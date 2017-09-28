@@ -13,9 +13,12 @@ musics = {
 
 class Player:
     def __init__(self):
+        self._initMode()
+        GPIO.cleanup()
+
+    def _initMode(self):
         GPIO.setmode(GPIO.BOARD)
         GPIO.setup(CHANNEL, GPIO.OUT)
-        GPIO.cleanup()
     
     def playTimeAlert(self, hour):
         if hour > 24 or hour < 0:
@@ -51,6 +54,7 @@ class Player:
 
 
     def playFlash(self):
+        self._initMode()
         GPIO.output(CHANNEL, 1)
         time.sleep(GAP)
         GPIO.output(CHANNEL, 0)
@@ -60,5 +64,5 @@ if __name__ == "__main__":
     p = Player()
     #print "Play Sound Hehe"
     #p.playSound("中华人民共和国，今天成立了", "vixqa")
-    #p.playMusic(False)
-    p.playTimeAlert(8)
+    p.playMusic(url = "http://58.216.22.56/file3.data.weipan.cn/36050867/40298daf4f7a1af67e9bab1eedcee319e21a8240?ip=1506590827,58.211.225.90&ssig=apb9YRrRBq&Expires=1506591427&KID=sae,l30zoo1wmz&fn=Gee.mp3&skiprd=2&se_ip_debug=58.211.225.90&corp=2&from=1221134&wsiphost=local")
+    #p.playTimeAlert(8)
