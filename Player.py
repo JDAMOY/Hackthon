@@ -37,12 +37,11 @@ class Player:
         print message
         self.playSound(message)
 
-    def playMusic(self, success=True):
-        music = None
-        if success:
-            music = musics['SUCCESS']
-        else:
-            music = musics['FAILURE']
+    def playMusic(self, mode='SUCCESS', url = None):
+        music = url 
+
+        if not music:
+            music = musics[mode]
         os.system('mplayer ' + music)
 
     def playSound(self, words, accend="xiaoyan"):
