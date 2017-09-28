@@ -5,7 +5,9 @@ import Player
 p = Player.Player();
 @app.route('/music')
 def play_music():
-        p.playMusic(url = "https://raw.githubusercontent.com/JDAMOY/Hackthon/master/gee.mp3");
+        mode = request.args.get('mode')
+        music = request.args.get('music')
+        p.playMusic(mode, music);
         return 'OK'
 
 @app.route('/sound')
