@@ -61,4 +61,4 @@ if __name__ == "__main__":
     #print "Play Sound Hehe"
     #p.playSound("中华人民共和国，今天成立了", "vixqa")
     #p.playMusic(False)
-    p.playTimeAlert(18)
+    p.playTimeAlert(8)
