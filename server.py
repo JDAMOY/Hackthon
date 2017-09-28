@@ -12,7 +12,9 @@ def play_music():
 
 @app.route('/sound')
 def play_sound():
-        p.playSound("中华人民共和国，今天成立了", "vixqa");
+        words = request.args.get('words')
+        accend = request.args.get('accend')
+        p.playSound(words, accend);
         return 'OK'
 
 @app.route('/flash')
