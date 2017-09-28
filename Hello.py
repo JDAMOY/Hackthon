@@ -6,3 +6,8 @@ import commands
 def hello_world():
         (status, output) = commands.getstatusoutput('mplayer rolling\ in\ the\ deep.mp3')
         return output;
+
+@app.route('/light')
+def start_light():
+        (status, output) = commands.getstatusoutput('python Player.py')
+        return output;
