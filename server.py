@@ -18,5 +18,10 @@ def play_flash():
         p.playFlash();
         return 'OK'
 
+@app.route('/timealert/<int:hour>')
+def play_timealert(hour):
+        p.playTimeAlert(hour);
+        return 'OK'
+
 if __name__ == '__main__':
     app.run(port=5000)
