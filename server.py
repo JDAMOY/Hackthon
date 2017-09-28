@@ -1,5 +1,7 @@
 #coding:utf-8
 from flask import Flask, request
+import urllib
+
 app = Flask(__name__)
 import Player
 p = Player.Player();
@@ -12,9 +14,10 @@ def play_music():
 
 @app.route('/sound')
 def play_sound():
-        words = request.args.get('words')
+        words = urllib.unquote(request.args.get('words'))
+        print ("received words: " + words)
         accend = request.args.get('accend')
-        p.playSound(words, accend);
+        p.playSound(words, accend)
         return 'OK'
 
 @app.route('/flash')
