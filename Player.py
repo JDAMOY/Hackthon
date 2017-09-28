@@ -13,17 +13,10 @@ class Player:
         pass
 
     def playFlash(self):
-        try:
-            while True:
-                    GPIO.output(CHANNEL, 1)
-                    print('set channel 11 to HIGH')
-                    time.sleep(GAP)
-                    GPIO.output(CHANNEL, 0)
-                    print('set channel 11 to LOW')
-                    time.sleep(GAP)
-        except KeyboardInterrupt:
-            GPIO.cleanup()
-            print('clean up...')
+        GPIO.output(CHANNEL, 1)
+        time.sleep(GAP)
+        GPIO.output(CHANNEL, 0)
+        GPIO.cleanup()
 
 if __name__ == "__main__":
     p = Player()
