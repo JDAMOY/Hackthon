@@ -24,22 +24,22 @@ class Player:
     def playTimeAlert(self, hour):
         if hour > 24 or hour < 0:
             return
-        charList = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九']
+        charList = [u'', u'一', u'二', u'三', u'四', u'五', u'六', u'七', u'八', u'九']
         htext = charList[hour % 10]
 
         if hour / 10 == 1:
-            htext = "十" + htext
+            htext = u"十" + htext
         elif hour / 10 == 2:
-            htext = '二十' + htext
+            htext = u'二十' + htext
         else:
             pass
         
         if hour == 0:
-            htext = '零'
+            htext = u'零'
             
-        message = "现在是北京时间%s点整" % htext
+        message = u"现在是北京时间%s点整" % htext
         print message
-        self.playSound(message.encode('utf-8'))
+        self.playSound(message)
 
     def playMusic(self, mode='SUCCESS', url = None):
         music = url 
