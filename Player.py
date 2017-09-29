@@ -39,7 +39,7 @@ class Player:
             
         message = "现在是北京时间%s点整" % htext
         print message
-        self.playSound(message)
+        self.playSound(message.encode('utf-8'))
 
     def playMusic(self, mode='SUCCESS', url = None):
         music = url 
