@@ -1,4 +1,5 @@
-#coding:utf-8
+# -*- coding: utf-8 -*- 
+
 import RPi.GPIO as GPIO
 import time
 import os
@@ -48,9 +49,9 @@ class Player:
         os.system('mplayer ' + music)
 
     def playSound(self, words, accend="xiaoyan"):
-        cmd = "tts temp.wav '%s' %s && mplayer temp.wav && rm temp.wav " % (words, accend)
+        cmd = u"tts temp.wav '%s' %s && mplayer temp.wav && rm temp.wav " % (words, accend)
         print cmd
-        os.system(cmd)
+        os.system(cmd.encode('utf-8'))
 
 
     def playFlash(self):
@@ -63,6 +64,6 @@ class Player:
 if __name__ == "__main__":
     p = Player()
     #print "Play Sound Hehe"
-    #p.playSound("中华人民共和国，今天成立了", "vixqa")
-    p.playMusic(url = "http://58.216.22.56/file3.data.weipan.cn/36050867/40298daf4f7a1af67e9bab1eedcee319e21a8240?ip=1506590827,58.211.225.90&ssig=apb9YRrRBq&Expires=1506591427&KID=sae,l30zoo1wmz&fn=Gee.mp3&skiprd=2&se_ip_debug=58.211.225.90&corp=2&from=1221134&wsiphost=local")
+    p.playSound("中华人民共和国，今天成立了", "vixqa")
+    #p.playMusic(url = "http://58.216.22.56/file3.data.weipan.cn/36050867/40298daf4f7a1af67e9bab1eedcee319e21a8240?ip=1506590827,58.211.225.90&ssig=apb9YRrRBq&Expires=1506591427&KID=sae,l30zoo1wmz&fn=Gee.mp3&skiprd=2&se_ip_debug=58.211.225.90&corp=2&from=1221134&wsiphost=local")
     #p.playTimeAlert(8)
