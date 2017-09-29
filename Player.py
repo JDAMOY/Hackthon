@@ -9,7 +9,8 @@ GAP	= 5
 
 musics = {
         "SUCCESS": "success_gee.mp4",
-        "FAILURE": "failure_kxzsn.wav"
+        "FAILURE": "failure_kxzsn.wav",
+        "HAPPY": "gxfc.mp3"
         }
 
 class Player:
