@@ -8,7 +8,7 @@ CHANNEL = 11
 GAP	= 5
 
 musics = {
-        "SUCCESS": "success_zhouxx.mp3",
+        "SUCCESS": "success_gee.mp4",
         "FAILURE": "failure_kxzsn.wav"
         }
 
